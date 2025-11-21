@@ -1,0 +1,11 @@
+[pagination]
+pagerSize = 10
+
+
+[markup.highlight]
+noClasses = false
+
+[params]
+# Enable or disable syntax highlighting styles
+# Should be !noClasses
+syntax = true

@@ -1,0 +1,19 @@
+[[main]]
+name = 'home'
+pageRef = '/'
+weight = 10
+
+[[main]]
+name = 'about'
+pageRef = '/about'
+weight = 20
+
+[[main]]
+name = 'writings'
+pageRef = '/posts'
+weight = 30
+
+[[main]]
+name = 'links'
+pageRef = '/links'
+weight = 40

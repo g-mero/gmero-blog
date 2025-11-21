@@ -1,0 +1,5 @@
+# Links Settings
+# Configure how links are displayed
+
+showOnHome: 4 # Number of links to show on homepage (0 = don't show)
+homeGroups: ["Friends", "Tools"] # Groups to show on home (empty = all)

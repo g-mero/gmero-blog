@@ -1,0 +1,22 @@
+# Hugo-generated folders
+public/
+resources/
+
+# Node / build artifacts
+node_modules/
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache / temporary
+.sass-cache/
+.cache/
+coverage/
+
+# Hugo files
+.hugo_build.lock
+hugo_stats.json
+
+*.local

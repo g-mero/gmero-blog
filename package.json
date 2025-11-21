@@ -1,0 +1,23 @@
+{
+  "name": "gmero-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "this is not a package",
+  "main": "index.js",
+  "scripts": {
+    "upload-cos": "tsx ./scripts/deploy-cos.ts",
+    "refresh-doge": "tsx ./scripts/doge-cdn-refresh.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.21.0",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "cos-nodejs-sdk-v5": "^2.15.4",
+    "dotenv": "^17.2.3",
+    "node-fetch": "^3.3.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

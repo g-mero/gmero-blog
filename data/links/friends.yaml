@@ -1,0 +1,21 @@
+# Friends Links Group
+name: "Friends"
+name_zh-cn: "朋友们"
+weight: 1
+
+items:
+  - name: "Gmero's Blog"
+    name_zh-cn: "歌梦罗(gmero)"
+    url: "https://www.gmero.com"
+    description: "Live hard, love hard"
+    description_zh-cn: "努力生活, 努力热爱"
+    weight: 1
+  - name: Oyiso's Blog
+    url: "https://oyiso.cn"
+    description: The shortest answer is doing
+    weight: 2
+  - name: Roozen's site
+    name_zh-cn: "Roozen的小破站"
+    url: "https://roozen.top"
+    description: 技术宅男拯救世界！
+    weight: 3

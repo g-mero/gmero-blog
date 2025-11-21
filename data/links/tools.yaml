@@ -1,0 +1,17 @@
+# Tools Links Group
+name: "Tools"
+name_zh-cn: "工具"
+weight: 2
+
+items:
+  - name: "Hugo"
+    url: "https://gohugo.io"
+    description: "The world's fastest framework for building websites"
+    description_zh-cn: "世界上最快的网站构建框架"
+    weight: 1
+
+  - name: "GitHub"
+    url: "https://github.com"
+    description: "Where the world builds software"
+    description_zh-cn: "全球最大的代码托管平台"
+    weight: 2

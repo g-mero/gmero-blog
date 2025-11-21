@@ -1,0 +1,54 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    env:
+      COS_SECRET_ID: ${{ secrets.COS_SECRET_ID }}
+      COS_SECRET_KEY: ${{ secrets.COS_SECRET_KEY }}
+      COS_BUCKET: ${{ secrets.COS_BUCKET }}
+      COS_REGION: ${{ secrets.COS_REGION }}
+      COS_LOCAL_DIR: ${{ secrets.COS_LOCAL_DIR }}
+      COS_PREFIX: ${{ secrets.COS_PREFIX }}
+
+      DOGE_ACCESS_KEY: ${{ secrets.DOGE_ACCESS_KEY }}
+      DOGE_SECRET_KEY: ${{ secrets.DOGE_SECRET_KEY }}
+      DOGE_PATH: ${{ secrets.DOGE_PATH }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.152.2"
+          # extended: true
+
+      - name: Build Hugo site
+        run: hugo --minify
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Setup Pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Upload to TCS LightCos
+        run: pnpm run upload-cos
+
+      - name: Refresh Doge CDN
+        run: pnpm run refresh-doge

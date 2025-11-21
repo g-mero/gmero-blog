@@ -1,0 +1,31 @@
+{{- /*
+This file extends the footer with custom content.
+
+To use this in your site:
+1. Create layouts/_partials/extend-footer.html in your site root
+2. Add any custom footer content (ICP number, links, etc.)
+
+Example content:
+
+<p>
+  <a href="https://beian.miit.gov.cn/">ICP: 12345678</a>
+</p>
+
+<p>
+  <a href="/privacy/">Privacy Policy</a> |
+  <a href="/terms/">Terms of Service</a>
+</p>
+*/ -}}
+
+{{- /* Example: Display custom footer text from site params */ -}}
+<p><a class="inline-block" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" title="又拍云"
+    target="_blank" style="opacity: .7;">
+    <img alt="upyun" style="height:1.3em;vertical-align:text-bottom" src="/upyun.png" loading="lazy">
+    <span>提供加速服务</span></a> </p>
+
+<div class="flex flex-wrap gap-xs" style="opacity: .7;">
+  <a class="inline-block" href="https://beian.miit.gov.cn/" target="_blank" title="已备案">皖ICP备20010301号</a>
+  <a class="inline-block" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34082702340940"
+    target="_blank" title="公安备案"> <img style="height:1.2em;vertical-align:text-bottom;margin-right:.25em" src="/ga.png"
+      alt="ga" loading="lazy">皖公网安备34082702340940号</a>
+</div>

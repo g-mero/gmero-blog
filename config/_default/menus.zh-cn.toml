@@ -1,0 +1,19 @@
+[[main]]
+name = '主页'
+pageRef = '/'
+weight = 10
+
+[[main]]
+name = '关于'
+pageRef = '/about'
+weight = 20
+
+[[main]]
+name = '文章'
+pageRef = '/posts'
+weight = 30
+
+[[main]]
+name = '友情链接'
+pageRef = '/links'
+weight = 40
