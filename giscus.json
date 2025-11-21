@@ -1,0 +1,4 @@
+{
+  "origins": ["https://www.gmero.com", "https://cfblog.sxl.cc"],
+  "originsRegex": ["http://localhost:[0-9]+"]
+}

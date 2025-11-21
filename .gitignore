@@ -20,3 +20,4 @@ coverage/
 hugo_stats.json
 
 *.local
+.env

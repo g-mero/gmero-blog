@@ -8,12 +8,12 @@ export interface DeployConfig {
   secretKey: string;
   bucket: string;
   region: string;
-  localDir?: string; // 默认 public/
-  prefix?: string; // 远端路径前缀
+  localDir?: string; // default: public/
+  prefix?: string; // remote path prefix
 }
 
 // -------------------------------
-// 递归列出所有文件
+// Recursively list all files
 // -------------------------------
 function listFilesRecursively(baseDir: string): string[] {
   const results: string[] = [];
@@ -34,7 +34,7 @@ function listFilesRecursively(baseDir: string): string[] {
 }
 
 // -------------------------------
-// 清空 COS bucket
+// Empty COS bucket
 // -------------------------------
 async function emptyBucket(cos: COS, bucket: string, region: string) {
   async function loop(marker?: string) {
@@ -47,7 +47,7 @@ async function emptyBucket(cos: COS, bucket: string, region: string) {
 
     const objects = (res.Contents || []).map((o: any) => ({ Key: o.Key }));
     if (objects.length > 0) {
-      console.log(`删除 ${objects.length} 个对象`);
+      console.log(`Deleting ${objects.length} objects`);
       await cos.deleteMultipleObject({
         Bucket: bucket,
         Region: region,
@@ -64,7 +64,7 @@ async function emptyBucket(cos: COS, bucket: string, region: string) {
 }
 
 // -------------------------------
-// 主部署任务
+// Main deploy task
 // -------------------------------
 async function deployToCOS(args: DeployConfig) {
   if (!args.secretId || !args.secretKey || !args.bucket || !args.region) {
@@ -74,34 +74,34 @@ async function deployToCOS(args: DeployConfig) {
   const localDir = args.localDir || path.resolve("public");
   const prefix = args.prefix || "";
 
-  console.log(`📁 本地目录: ${localDir}`);
-  console.log(`☁️ 目标 COS: ${args.bucket} (${args.region})`);
+  console.log(`📁 Local directory: ${localDir}`);
+  console.log(`☁️ Target COS: ${args.bucket} (${args.region})`);
 
   const cos = new COS({
     SecretId: args.secretId,
     SecretKey: args.secretKey,
   });
 
-  // ❶ 清空 bucket
-  console.log("🧹 正在清空 bucket...");
+  // ❶ Empty bucket
+  console.log("🧹 Clearing bucket...");
   await emptyBucket(cos, args.bucket, args.region);
-  console.log("✔ bucket 已清空");
+  console.log("✔ bucket cleared");
 
-  // ❷ 获取文件列表
+  // ❷ Get file list
   const filePaths = listFilesRecursively(localDir);
-  console.log(`📦 待上传文件数量: ${filePaths.length}`);
+  console.log(`📦 Files to upload: ${filePaths.length}`);
 
   let success = 0;
   let fail = 0;
 
-  // ❸ 逐个上传
+  // ❸ Upload files one by one
   for (const filePath of filePaths) {
     const key = path.relative(localDir, filePath).replace(/\\/g, "/");
 
     const finalKey = prefix ? `${prefix}/${key}` : key;
 
     try {
-      console.log(`⬆️ 上传: ${finalKey}`);
+      console.log(`⬆️ Uploading: ${finalKey}`);
 
       await cos.putObject({
         Bucket: args.bucket,
@@ -113,11 +113,11 @@ async function deployToCOS(args: DeployConfig) {
       success++;
     } catch (err) {
       fail++;
-      console.error(`❌ 上传失败: ${finalKey}`, err);
+      console.error(`❌ Upload failed: ${finalKey}`, err);
     }
   }
 
-  console.log(`🎉 上传完成: 成功 ${success} | 失败 ${fail}`);
+  console.log(`🎉 Upload complete: success ${success} | fail ${fail}`);
 }
 
 deployToCOS(config.cos);

@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "upload-cos": "tsx ./scripts/deploy-cos.ts",
-    "refresh-doge": "tsx ./scripts/doge-cdn-refresh.ts"
+    "refresh-doge": "tsx ./scripts/doge-cdn-refresh.ts",
+    "preview": "hugo server --gc",
+    "preview:draft": "hugo server --gc -D"
   },
   "keywords": [],
   "author": "",

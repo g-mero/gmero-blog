@@ -5,16 +5,16 @@ import { config } from "./config";
 export interface DogeRefreshConfig {
   accessKey: string; // AccessKey
   secretKey: string; // SecretKey
-  path: string; // 要刷新的目录
+  path: string; // path to refresh
 }
 
 /**
- * 刷新多吉云 CDN（符合官方文档）
+ * Refresh DogeCloud CDN (per official docs)
  */
 async function refreshDogeCDN(cfg: DogeRefreshConfig) {
   const { accessKey, secretKey, path } = cfg;
 
-  // 请求 body（表单形式，而不是 JSON）
+  // request body (form encoded, not JSON)
   const body = `rtype=path&urls=${encodeURIComponent(path)}`;
   const apiPath = "/cdn/refresh/add.json";
 
@@ -37,11 +37,11 @@ async function refreshDogeCDN(cfg: DogeRefreshConfig) {
   const json: any = await resp.json();
 
   if (json.code === 200) {
-    console.log(`✔ 多吉云 CDN 刷新成功`);
+    console.log(`✔ DogeCloud CDN refresh successful`);
     console.log(`task_id: ${json.data.task_id}`);
     console.log(`count: ${json.data.count}`);
   } else {
-    console.error(`❌ 刷新失败:`, json);
+    console.error(`❌ Refresh failed:`, json);
   }
 
   return json;

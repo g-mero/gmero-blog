@@ -4,8 +4,6 @@ date = 2023-01-01T08:00:00-07:00
 draft = false
 +++
 
-Hi, this is the **Mori Theme** demo site, a minimal Hugo blogging theme. It's particularly suitable for clean personal web pages and blogs.
+Hello, welcome to my blog! I'm Gmero, a developer passionate about programming and technology. Here, I share my learning notes, project experiences, as well as some thoughts and insights.
 
-This is a demo site showcasing the basic features and layout. Feel free to explore and customize this theme to make it your own.
-
-You can find me on [GitHub](https://github.com/g-mero/hugo-theme-mori).
+You can find me on [GitHub](https://github.com/g-mero).

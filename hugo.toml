@@ -1,5 +1,5 @@
-baseURL = 'https://example.org/'
-title = 'gmero blog'
+baseURL = 'https://www.gmero.com/'
+title = 'Gmero'
 defaultContentLanguage = 'zh-cn'
 theme = 'hugo-theme-mori'
 copyright = '© 2025 Gmero. All rights reserved.'
