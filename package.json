@@ -8,7 +8,8 @@
     "upload-cos": "tsx ./scripts/deploy-cos.ts",
     "refresh-doge": "tsx ./scripts/doge-cdn-refresh.ts",
     "preview": "hugo server --gc",
-    "preview:draft": "hugo server --gc -D"
+    "preview:draft": "hugo server --gc -D",
+    "build": "hugo --gc --minify --cleanDestinationDir"
   },
   "keywords": [],
   "author": "",

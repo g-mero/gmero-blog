@@ -34,6 +34,33 @@ function listFilesRecursively(baseDir: string): string[] {
 }
 
 // -------------------------------
+// Concurrent execution with limit
+// -------------------------------
+async function pLimit<T>(
+  tasks: (() => Promise<T>)[],
+  concurrency: number
+): Promise<T[]> {
+  const results: T[] = [];
+  const executing: Promise<void>[] = [];
+
+  for (const task of tasks) {
+    const p = task().then((result) => {
+      results.push(result);
+      executing.splice(executing.indexOf(p), 1);
+    });
+
+    executing.push(p);
+
+    if (executing.length >= concurrency) {
+      await Promise.race(executing);
+    }
+  }
+
+  await Promise.all(executing);
+  return results;
+}
+
+// -------------------------------
 // Empty COS bucket
 // -------------------------------
 async function emptyBucket(cos: COS, bucket: string, region: string) {
@@ -94,10 +121,9 @@ async function deployToCOS(args: DeployConfig) {
   let success = 0;
   let fail = 0;
 
-  // ❸ Upload files one by one
-  for (const filePath of filePaths) {
+  // ❸ Upload files concurrently
+  const uploadTasks = filePaths.map((filePath) => async () => {
     const key = path.relative(localDir, filePath).replace(/\\/g, "/");
-
     const finalKey = prefix ? `${prefix}/${key}` : key;
 
     try {
@@ -111,11 +137,16 @@ async function deployToCOS(args: DeployConfig) {
       });
 
       success++;
+      return { success: true, key: finalKey };
     } catch (err) {
       fail++;
       console.error(`❌ Upload failed: ${finalKey}`, err);
+      return { success: false, key: finalKey, error: err };
     }
-  }
+  });
+
+  // Execute uploads with concurrency limit of 15
+  await pLimit(uploadTasks, 15);
 
   console.log(`🎉 Upload complete: success ${success} | fail ${fail}`);
 }
