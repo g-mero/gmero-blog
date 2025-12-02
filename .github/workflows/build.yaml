@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: build and deploy Hugo site to pages branch
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
