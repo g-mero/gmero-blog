@@ -1,0 +1,3 @@
+# Allow giscus.app to load custom CSS
+/css/*
+  Access-Control-Allow-Origin: https://giscus.app
