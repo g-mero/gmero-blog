@@ -25,7 +25,7 @@ jobs:
           # extended: true
 
       - name: Build Hugo site
-        run: hugo --minify
+        run: hugo --minify -d public-pages
 
       - name: Deploy to pages branch
         uses: rayluo/github-pages-overwriter@v1.3
@@ -33,7 +33,7 @@ jobs:
           # You can use whatever directory your project uses, for example "wwwroot".
           # Such a directory does *not* have to already exist in your repo,
           # it could be an output directory created dynamically by your static website builder.
-          source-directory: public
+          source-directory: public-pages
 
           # Optional. Default value "gh_pages".
           # It specifies the temporary branch which hosts the static website.
