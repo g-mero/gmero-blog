@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教程 on Gmero</title><link>https://www.gmero.com/tags/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on Gmero</description><generator>Hugo</generator><language>zh-CN</language><copyright>© 2025 Gmero. All rights reserved.</copyright><lastBuildDate>Wed, 19 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.gmero.com/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown 语法指南</title><link>https://www.gmero.com/posts/markdown-guide/</link><pubDate>Sun, 17 Nov 2024 10:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/markdown-guide/</guid><description>&lt;p&gt;本文介绍常用的 Markdown 语法。&lt;/p&gt;
+&lt;h2 id="标题"&gt;标题&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 创建标题，数量代表级别。&lt;/p&gt;
+&lt;h2 id="文本样式"&gt;文本样式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;粗体文本&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;斜体文本&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;删除线&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="链接和图片"&gt;链接和图片&lt;/h2&gt;
+&lt;p&gt;&lt;a
+ href="https://example.com"
+ target="_blank"
+ &gt;这是一个链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="本地图片"
+ width="1280"
+ height="853"
+ src="https://www.gmero.com/posts/markdown-guide/autumn-7493439_1280.jpg"&gt;&lt;figcaption&gt;这是一张本地图片&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="远程图片"
+ src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&amp;amp;q=80"&gt;&lt;figcaption&gt;这是一张远程图片&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="代码"&gt;代码&lt;/h2&gt;
+&lt;p&gt;行内代码：&lt;code&gt;const x = 1;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码块：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="列表"&gt;列表&lt;/h2&gt;
+&lt;p&gt;无序列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目 1&lt;/li&gt;
+&lt;li&gt;项目 2&lt;/li&gt;
+&lt;li&gt;项目 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有序列表：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一步&lt;/li&gt;
+&lt;li&gt;第二步&lt;/li&gt;
+&lt;li&gt;第三步&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="引用"&gt;引用&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一段引用文字。
+可以有多行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="表格"&gt;表格&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;列 1&lt;/th&gt;
+ &lt;th&gt;列 2&lt;/th&gt;
+ &lt;th&gt;列 3&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;A&lt;/td&gt;
+ &lt;td&gt;B&lt;/td&gt;
+ &lt;td&gt;C&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D&lt;/td&gt;
+ &lt;td&gt;E&lt;/td&gt;
+ &lt;td&gt;F&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这就是基本的 Markdown 语法！&lt;/p&gt;</description></item></channel></rss>

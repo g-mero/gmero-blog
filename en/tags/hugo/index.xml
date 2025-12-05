@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Gmero</title><link>https://www.gmero.com/en/tags/hugo/</link><description>Recent content in Hugo on Gmero</description><generator>Hugo</generator><language>en</language><copyright>© 2025 Gmero. All rights reserved.</copyright><lastBuildDate>Mon, 18 Nov 2024 10:00:00 +0800</lastBuildDate><atom:link href="https://www.gmero.com/en/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Welcome to Mori Theme</title><link>https://www.gmero.com/en/posts/welcome/</link><pubDate>Mon, 18 Nov 2024 10:00:00 +0800</pubDate><guid>https://www.gmero.com/en/posts/welcome/</guid><description>&lt;p&gt;Welcome to &lt;strong&gt;Mori Theme&lt;/strong&gt;! This is a minimal Hugo blogging theme.&lt;/p&gt;
+&lt;h2 id="key-features"&gt;Key Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Clean and elegant design&lt;/li&gt;
+&lt;li&gt;Fully responsive&lt;/li&gt;
+&lt;li&gt;Multilingual support&lt;/li&gt;
+&lt;li&gt;Markdown friendly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="quick-start"&gt;Quick Start&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install Hugo&lt;/li&gt;
+&lt;li&gt;Clone this theme&lt;/li&gt;
+&lt;li&gt;Start writing&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="markdown-examples"&gt;Markdown Examples&lt;/h2&gt;
+&lt;p&gt;Here are some basic Markdown usages:&lt;/p&gt;
+&lt;h3 id="code-block"&gt;Code Block&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Hello, Mori!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="lists"&gt;Lists&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;First item&lt;/li&gt;
+&lt;li&gt;Second item&lt;/li&gt;
+&lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="blockquote"&gt;Blockquote&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Less is more.
+—— Ludwig Mies van der Rohe&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Enjoy using Mori!&lt;/p&gt;</description></item></channel></rss>

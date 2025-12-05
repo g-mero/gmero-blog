@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>首页 on Gmero</title><link>https://www.gmero.com/</link><description>Recent content in 首页 on Gmero</description><generator>Hugo</generator><language>zh-CN</language><copyright>© 2025 Gmero. All rights reserved.</copyright><lastBuildDate>Thu, 04 Dec 2025 14:00:00 +0800</lastBuildDate><atom:link href="https://www.gmero.com/index.xml" rel="self" type="application/rss+xml"/><item><title>免费的 EdgeOne 有那么好用吗？</title><link>https://www.gmero.com/posts/tinker/251204-edge-one-experience/</link><pubDate>Thu, 04 Dec 2025 14:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/tinker/251204-edge-one-experience/</guid><description>&lt;p&gt;最近在迁移博客到 Hugo 时发现腾讯云之前的 EdgeOne（后面统称 EO）国内版也开通了，并且正在做&lt;a
+ href="https://cloud.tencent.com/act/pro/eo-freeplan"
+ target="_blank"
+ &gt;活动&lt;/a&gt;，扫了抽奖二维码直接就抽到了 EO 的长期免费资格，看了一下跟 cloudflare（后面统称 cf） 的免费 CDN 类似，无限流量，但是会阉割掉很多高级功能（比如我最想要的以 Header 自定义 CacheKey），还有就是正在公测的 pages（据说会一直免费）&lt;/p&gt;
+&lt;h2 id="pages-使用体验"&gt;Pages 使用体验&lt;/h2&gt;
+&lt;p&gt;EO Pages 与 CF Pages 类似，关联好 Github 仓库后就能自动部署，但目前很多功能还没有，比如它就不支持 Hugo 的自动部署，我是使用原始办法，用 Actions 编译好输出到特定分支，Pages 部署到该分支上。从 CF Pages 迁移过来挺简单的，EO Pages 使用 edgeone.json 来进行跳转、响应头设置等配置&lt;/p&gt;
+&lt;p&gt;我原先的博客部署方案是国内多吉+腾讯云轻量存储，国外 CF Pages，速度不差，但多吉毕竟只有 20G 的流量，部署过程也很麻烦（需要 Action 编译并上传存储桶然后刷新 CDN），迁移到 EO 后就只需要写一个 Action 来进行编译和推送到特定分支了，下面是两种方案的访问速度对比：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;多吉 + CF，国内平均 0.37，国外 0.65&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="doge1"
+ src="https://as.gmero.com/pic/2025/12/04/1764833143.png"&gt;&lt;figcaption&gt;多吉-国内测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="doge2"
+ src="https://as.gmero.com/pic/2025/12/04/1764833164.png"&gt;&lt;figcaption&gt;CF-国外测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EO Pages，国内平均 0.18，国外 0.49&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="eo1"
+ src="https://as.gmero.com/pic/2025/12/04/1764833298.png"&gt;&lt;figcaption&gt;EO-国内测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="eo2"
+ src="https://as.gmero.com/pic/2025/12/04/1764833297.png"&gt;&lt;figcaption&gt;EO-国外测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以看到 EO 的国内访问速度可以说是非常好了，最后使用了 EO + CF 的方案&lt;/p&gt;</description></item><item><title>MoonLight校园网串流教程</title><link>https://www.gmero.com/p/13/</link><pubDate>Wed, 19 Nov 2025 14:10:29 +0800</pubDate><guid>https://www.gmero.com/p/13/</guid><description>&lt;h2 id="说在前面"&gt;说在前面&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;! 由于，各个学校的网络环境不同，可能存在内网隔离，宿舍与校内网络结构不互通等情况&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="moonlight-简介"&gt;MoonLight 简介&lt;/h3&gt;
+&lt;p&gt;&lt;a
+ href="https://github.com/moonlight-stream"
+ target="_blank"
+ &gt;MoonLight&lt;/a&gt; 是一款开源的软件，可以利用 NVIDIA 的 GameStream 技术进行远程串流游戏。它可以让你在几乎任何设备上玩你的 PC 游戏，无论你是在另一个房间还是离你的游戏机很远。MOONLIGHT 最初是 NVIDIA Shield 的一个第三方客户端，但现在也支持其他平台，如 Android，iOS，Apple TV，PC，Mac 等。MOONLIGHT 还可以让你以高达 4K 分辨率和 HDR 支持来串流你的 PC 桌面。&lt;/p&gt;
+&lt;h3 id="我们需要什么"&gt;我们需要什么&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;一台电脑作为串流的目标（Nvdia 显卡并开启 SHIELD，AMD 需要下载 sunshine）&lt;/li&gt;
+&lt;li&gt;一台手机或者其他设备作为我们在外使用 Moonlight 时的临时控制端（因为需要输入密码）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="moonlight-使用教程"&gt;MoonLight 使用教程&lt;/h2&gt;
+&lt;h3 id="pc-端设置"&gt;PC 端设置&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打开&lt;code&gt;GeForce Experience&lt;/code&gt;, &lt;code&gt;设置&lt;/code&gt;→&lt;code&gt;SHIELD&lt;/code&gt;→&lt;code&gt;打开GAMESTREAM&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我们还需要在&lt;code&gt;GAMESTREAM&lt;/code&gt;中添加&lt;code&gt;C:\Windows\System32\mstsc.exe&lt;/code&gt;，让我们能直接串流到桌面&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有人反馈说最新版本没有 SHIELD，但我是最新驱动，在 3070 与 4060ti 显卡上都能够开启该功能，猜想可能是网络环境等原因导致无法开启&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="添加mstsc"
+ src="https://s2.loli.net/2023/06/09/UdBHc9vsf8MizEL.png"&gt;&lt;figcaption&gt;1192/692&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;防火墙端口放行，校园网虽然是个大内网，但不是透明的，还是需要通过防火墙的&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;管理员运行 PowerShell 分别输入以下命令放行 moonlight 所需要的端口&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;netsh advfirewall firewall add rule &lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;GameStream UDP&amp;#34;&lt;/span&gt; &lt;span class="nv"&gt;dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;in &lt;span class="nv"&gt;protocol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;udp &lt;span class="nv"&gt;localport&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;5353,47998-48010 &lt;span class="nv"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;allow
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;netsh advfirewall firewall add rule &lt;span class="nv"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;GameStream TCP&amp;#34;&lt;/span&gt; &lt;span class="nv"&gt;dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;in &lt;span class="nv"&gt;protocol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;tcp &lt;span class="nv"&gt;localport&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;47984,47989,48010 &lt;span class="nv"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;allow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果你想删除这两个规则请分别输入以下命令&lt;/p&gt;</description></item><item><title>欢迎使用 Mori 主题</title><link>https://www.gmero.com/posts/welcome/</link><pubDate>Mon, 18 Nov 2024 10:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/welcome/</guid><description>&lt;p&gt;欢迎使用 &lt;strong&gt;Mori 主题&lt;/strong&gt;！这是一个极简的 Hugo 博客主题。&lt;/p&gt;
+&lt;h2 id="主要特点"&gt;主要特点&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;简洁优雅的设计&lt;/li&gt;
+&lt;li&gt;完全响应式&lt;/li&gt;
+&lt;li&gt;支持多语言&lt;/li&gt;
+&lt;li&gt;Markdown 友好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="快速开始"&gt;快速开始&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 Hugo&lt;/li&gt;
+&lt;li&gt;克隆这个主题&lt;/li&gt;
+&lt;li&gt;开始写作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="markdown-示例"&gt;Markdown 示例&lt;/h2&gt;
+&lt;p&gt;这里是一些 Markdown 的基本用法：&lt;/p&gt;
+&lt;h3 id="代码块"&gt;代码块&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Hello, Mori!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="列表"&gt;列表&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;第一项&lt;/li&gt;
+&lt;li&gt;第二项&lt;/li&gt;
+&lt;li&gt;第三项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="引用"&gt;引用&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;少即是多。
+—— Ludwig Mies van der Rohe&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;祝你使用愉快！&lt;/p&gt;</description></item><item><title>Markdown 语法指南</title><link>https://www.gmero.com/posts/markdown-guide/</link><pubDate>Sun, 17 Nov 2024 10:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/markdown-guide/</guid><description>&lt;p&gt;本文介绍常用的 Markdown 语法。&lt;/p&gt;
+&lt;h2 id="标题"&gt;标题&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;#&lt;/code&gt; 创建标题，数量代表级别。&lt;/p&gt;
+&lt;h2 id="文本样式"&gt;文本样式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;粗体文本&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;斜体文本&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;删除线&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="链接和图片"&gt;链接和图片&lt;/h2&gt;
+&lt;p&gt;&lt;a
+ href="https://example.com"
+ target="_blank"
+ &gt;这是一个链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="本地图片"
+ width="1280"
+ height="853"
+ src="https://www.gmero.com/posts/markdown-guide/autumn-7493439_1280.jpg"&gt;&lt;figcaption&gt;这是一张本地图片&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="远程图片"
+ src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&amp;amp;q=80"&gt;&lt;figcaption&gt;这是一张远程图片&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="代码"&gt;代码&lt;/h2&gt;
+&lt;p&gt;行内代码：&lt;code&gt;const x = 1;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;代码块：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="列表"&gt;列表&lt;/h2&gt;
+&lt;p&gt;无序列表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目 1&lt;/li&gt;
+&lt;li&gt;项目 2&lt;/li&gt;
+&lt;li&gt;项目 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;有序列表：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一步&lt;/li&gt;
+&lt;li&gt;第二步&lt;/li&gt;
+&lt;li&gt;第三步&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="引用"&gt;引用&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一段引用文字。
+可以有多行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="表格"&gt;表格&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;列 1&lt;/th&gt;
+ &lt;th&gt;列 2&lt;/th&gt;
+ &lt;th&gt;列 3&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;A&lt;/td&gt;
+ &lt;td&gt;B&lt;/td&gt;
+ &lt;td&gt;C&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;D&lt;/td&gt;
+ &lt;td&gt;E&lt;/td&gt;
+ &lt;td&gt;F&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这就是基本的 Markdown 语法！&lt;/p&gt;</description></item><item><title>友情链接</title><link>https://www.gmero.com/links/</link><pubDate>Sat, 01 Jun 2024 00:00:00 +0800</pubDate><guid>https://www.gmero.com/links/</guid><description>&lt;p&gt;发现有趣的网站和资源。&lt;/p&gt;</description></item><item><title>关于毕业</title><link>https://www.gmero.com/posts/life/20240502-about-graduation/</link><pubDate>Thu, 02 May 2024 00:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/life/20240502-about-graduation/</guid><description>&lt;p&gt;还有一个多月的时间就要大学毕业了，作为学生的时代就要结束了，致敬我那被超级加倍了的大学生活吧&lt;/p&gt;
+&lt;h2 id="大学五倍速快进的生活"&gt;大学，五倍速快进的生活&lt;/h2&gt;
+&lt;p&gt;大一已经是 2017 年的事情了，刚入学那段时间真的是开心啊，满怀希望跟斗志的憧憬着以后&amp;quot;热血充实&amp;quot;的大学生活。我还记得被学姐领到宿舍，路上我问学姐是大几的，学姐好像是听错了，说了句 20 了，哈哈。平平无奇的宿舍，离食堂跟澡堂都挺近的，那时候的我应该不会想到，快 7 年后，我还在同样的地方吧&lt;/p&gt;
+&lt;p&gt;大学生活是什么时候开始五倍速快进了呢，大概是我旷的第一节高数课开始的吧，晚上睡不着，白天起不来，天天都是打游戏，临时抱佛脚的看考试提纲。没参加过什么活动，也没有竞赛，平平淡淡的挨着被成绩警告的边缘度过了我的大一大二，唯一对现在有点帮助的可能就是大一过了四六级吧&lt;/p&gt;
+&lt;p&gt;大三的记忆好模糊啊，只记得寒假的时候爆发了疫情，也就是这个寒假，奶奶去世了。疫情的发展速度快的难以想象，大三下的开学时间从推迟到决定线上教学，这可是大三啊，好多同学已经在准备考研了，而我连本科的课程都难以通过，这段时间应该是我最痛苦的一段时间。也就是这时候，家里人说要不要去当兵，我想可以，虽然带着一点自暴自弃的情绪，但现在想想,当兵的决定无疑是正确的，不然我肯定是难以毕业，更别说考研工作了&lt;/p&gt;
+&lt;p&gt;时间流逝的速度，主观感受上便是生活的充实度的好坏吧，每天浑浑噩噩无所事事的，倍速的生活也让人感到绝望&lt;/p&gt;
+&lt;h2 id="迷茫未知失去和挫败"&gt;迷茫、未知、失去和挫败&lt;/h2&gt;
+&lt;p&gt;对人生感到迷茫，是我大学以来贯穿始终的感受，不知道自己能干什么，能望到头的只有虚无和墓碑。大学期间，社恐的我很难鼓起勇气去报名参加什么活动或者竞赛，现在想想真觉得可惜，很多都不是难，而是自己不愿意迈出那一步，学没学到，简历上都无东西可写&lt;/p&gt;
+&lt;p&gt;亲人的离世对我最大的影响便是感到前进路上失去了见证者，失去了守护者，感觉生活的意义失去了大半。我经常觉得自己是理性的，能够想通这些事情，但也经常让自己陷入沮丧到不能自拔的漩涡里。总感觉自己比别人少了不少依靠，但路是要自己走的，这些只是失败的借口罢&lt;/p&gt;
+&lt;p&gt;我现在想想自己这些年真的很失败啊，恋爱没谈过几场正经的，学习也是半瓶水，在部队也没获得过什么荣誉，两年训练得到的身体素质也在短短的时间里败的差不多了。真的很羡慕那些有坚定的目标和强有力的行动力的人啊，像我这种三分钟热度的废柴怎么会成功呢。退役复学后，踌躇满志的准备考公，后面又改成了考研，计划是定的挺早的，真正开始复习却拖到了 7 月份，所谓复习，也只是每天中文起床吃个午饭再去看几个小时视频，失败无疑是确定的。秋招糊弄着写了个简历，投了三家，没有一点回信，考研失败后春招基本没去，一直到 4 月中旬才想到要找工作，急急忙忙参加学校最后一次双选会，拿了个上位机软件的 offer，可以说完全不是自己感兴趣的领域了&lt;/p&gt;
+&lt;p&gt;马上就要过 24 岁的生日了，但感觉自己完全不少一个 24 岁的人该有的样子，毫无干劲，萎靡不振的&lt;/p&gt;
+&lt;h2 id="可是也会感到遗憾的吧"&gt;可是，也会感到遗憾的吧&lt;/h2&gt;
+&lt;p&gt;我蛮不希望自己就只是这样的，虽然说家庭的压力是一部分原因，但对于我自己来说，我仍旧相信我不会止步于此，我无法看到未来我能碰到怎样的机遇，或者说能不能像他们说的那样遇到一个&amp;quot;贵人&amp;quot;，我只是想我应该乘着还年轻，为了自己再拼一把，我想以后也不至于像现在这样后悔&lt;/p&gt;
+&lt;p&gt;嗯，对的，不后悔&lt;/p&gt;</description></item><item><title>关于</title><link>https://www.gmero.com/about/</link><pubDate>Mon, 01 Jan 2024 08:00:00 -0700</pubDate><guid>https://www.gmero.com/about/</guid><description>&lt;h2 id="联系我"&gt;联系我&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;邮箱: &lt;a
+ href="mailto:gmerocom@gmail.com"&gt;gmerocom@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GitHub: &lt;a
+ href="https://github.com/g-mero"
+ target="_blank"
+ &gt;https://github.com/g-mero&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>2023年终总结, 结果不会陪你演戏</title><link>https://www.gmero.com/posts/life/20240101-year-end-summary-2023/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/life/20240101-year-end-summary-2023/</guid><description>&lt;p&gt;真切的感受，高中毕业以后，一年的时间变得真的很短了，像是被按下了加速键，恍惚就过了五年多。2023 年也就这么过去了，这一年写了快 30 篇博文了吧，博客系统方案也是换了又换，感觉自己总是擅长把时间浪费在无意义的事情上，想着也是该写篇年度总结了，虽然也没什么值得记录的&lt;/p&gt;
+&lt;p&gt;这一年除了考研，似乎是也没什么值得回忆的大事件发生，感觉自己依旧是在原地徘徊，没有什么提升。年初的时候，也就是大三寒假期间，第一次感染新冠，难受了几天，但也很快就好了，这个寒假我顺利考过了科目二，这应该算是这一年唯一一件值得兴奋的事情了吧。这个寒假我也联系了以前的同学，一起打了打游戏，感觉大家似乎变了，又似乎没变，求求你们都慢一点长大吧&lt;/p&gt;
+&lt;p&gt;大三下学期，说是考研复习，但基本都被自己拖延症给耽误了，课基本都在早上，每天睡得又晚，精神状态很差。还好科目都考的不错，拿到了奖学金，放在大一大二，我是想都不敢想。这个学期主要还是在没心没肺的玩，想着到了暑假再开始复习&lt;/p&gt;
+&lt;p&gt;暑假先去找从小玩到大的几个兄弟玩了，再武汉玩了三天，他们基本都在读研，感觉自己好差劲，但这几天确实玩的开心。每回跟他们聚，就感觉又能回到初中的那一段段玩闹的时光了，真的很开心。哎，大家都长大了啊。这段时间说是复习，但也都没有用心，我总是很难静下心来，总觉得自己不行，总觉得这些事情都没有意义，老是三天打鱼两天晒网，自己都觉得烦&lt;/p&gt;
+&lt;p&gt;暑假结束，复习似乎又中断了，国庆的时候回了趟家，但又很快回学校了，在家里我总觉得憋得慌，我也讨厌一个人待在空荡荡的房子里的感觉，总希望能够见到一些人，可确实是很难有机会。接下来的时间就是玩复习玩，荒废度日，唯一觉得不那么颓废的就是几乎每天都在跑步锻炼，想借此麻痹自己，确实有点效果。想起新兵连班长经常对我们说的，结果不会陪你演戏，确实是这样，结果狠狠的抽了我一个耳光，虽然每天表现的没心没肺的，但确实心里会觉得失落&lt;/p&gt;
+&lt;p&gt;2024 年，我将大学毕业，又会有什么等着我呢，反正我是不敢立一点 flag 了&lt;/p&gt;</description></item><item><title>考研结束，我也结束了</title><link>https://www.gmero.com/posts/life/20231224-postgraduate-exam-ended/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/life/20231224-postgraduate-exam-ended/</guid><description>&lt;p&gt;果然，自己三天打鱼两天晒网，临时抱佛脚的心态终于是反映到了，一开始想着每门都及格保个 300 分，现在连过线都危险，数学更是大题一题都不会，自作自受啊。。&lt;/p&gt;
+&lt;p&gt;这几天都没睡好，天天抱佛脚，以为能创造什么奇迹呢，半桶水也顶多在政治英语这些科目有点用，数学跟专业课马上现原形，小丑行为&lt;/p&gt;
+&lt;p&gt;坚定目标之后就不要摆烂了，成年之后没有事情再那么轻松了，我真想找个坑把自己埋了，废物&lt;/p&gt;</description></item><item><title>期末考试结束了，真的折磨死我了</title><link>https://www.gmero.com/posts/life/20230617-final-exam-torture/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/life/20230617-final-exam-torture/</guid><description>&lt;p&gt;这个学期的期末考试在昨天终于结束了，有不少感悟跟新的体验，人都要被折磨死了。&lt;/p&gt;
+&lt;p&gt;这学期有笔试考试的是单片机、计算机网络、编译原理跟机器学习，考完之后单片机感觉有点危险，复习太不充分了，背的没考，很多只是有印象，真的离谱。机器学习虽然有很多不太会的，但至少能扯一点，挂科是不会挂科的了，编译原理跟计算机网络是非常稳的，题目基本都会，不枉我通宵复习。&lt;/p&gt;
+&lt;p&gt;说到通宵复习，因为考完单片机第二天就要考计算机网络跟编译原理，从零开始复习了通宵，15 号 12 点起床到 16 号下午 4 点考完试都没睡觉，考完试回宿舍大概从五点睡到了第二天 11 点，很痛苦，头一直很疼很发烧了一样，真的不能再熬夜了，要认清自己不再是之前那个能连续在网吧包两天夜的少年了。&lt;/p&gt;
+&lt;p&gt;期末复习还是要提前准备，千万不要和我一样考试前一天才开始突击了，身体真吃不消，老师画的重点真的很有用，按照重点复习绝对能过。&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt=""
+ src="https://s2.loli.net/2023/06/17/BiDY9TE3LHNjpPl.jpg"&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt=""
+ src="https://s2.loli.net/2023/06/17/NhgdqXkTPfiJAlv.jpg"&gt;&lt;/figure&gt;
+&lt;/p&gt;</description></item></channel></rss>

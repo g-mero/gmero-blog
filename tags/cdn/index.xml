@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CDN on Gmero</title><link>https://www.gmero.com/tags/cdn/</link><description>Recent content in CDN on Gmero</description><generator>Hugo</generator><language>zh-CN</language><copyright>© 2025 Gmero. All rights reserved.</copyright><lastBuildDate>Thu, 04 Dec 2025 14:00:00 +0800</lastBuildDate><atom:link href="https://www.gmero.com/tags/cdn/index.xml" rel="self" type="application/rss+xml"/><item><title>免费的 EdgeOne 有那么好用吗？</title><link>https://www.gmero.com/posts/tinker/251204-edge-one-experience/</link><pubDate>Thu, 04 Dec 2025 14:00:00 +0800</pubDate><guid>https://www.gmero.com/posts/tinker/251204-edge-one-experience/</guid><description>&lt;p&gt;最近在迁移博客到 Hugo 时发现腾讯云之前的 EdgeOne（后面统称 EO）国内版也开通了，并且正在做&lt;a
+ href="https://cloud.tencent.com/act/pro/eo-freeplan"
+ target="_blank"
+ &gt;活动&lt;/a&gt;，扫了抽奖二维码直接就抽到了 EO 的长期免费资格，看了一下跟 cloudflare（后面统称 cf） 的免费 CDN 类似，无限流量，但是会阉割掉很多高级功能（比如我最想要的以 Header 自定义 CacheKey），还有就是正在公测的 pages（据说会一直免费）&lt;/p&gt;
+&lt;h2 id="pages-使用体验"&gt;Pages 使用体验&lt;/h2&gt;
+&lt;p&gt;EO Pages 与 CF Pages 类似，关联好 Github 仓库后就能自动部署，但目前很多功能还没有，比如它就不支持 Hugo 的自动部署，我是使用原始办法，用 Actions 编译好输出到特定分支，Pages 部署到该分支上。从 CF Pages 迁移过来挺简单的，EO Pages 使用 edgeone.json 来进行跳转、响应头设置等配置&lt;/p&gt;
+&lt;p&gt;我原先的博客部署方案是国内多吉+腾讯云轻量存储，国外 CF Pages，速度不差，但多吉毕竟只有 20G 的流量，部署过程也很麻烦（需要 Action 编译并上传存储桶然后刷新 CDN），迁移到 EO 后就只需要写一个 Action 来进行编译和推送到特定分支了，下面是两种方案的访问速度对比：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;多吉 + CF，国内平均 0.37，国外 0.65&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="doge1"
+ src="https://as.gmero.com/pic/2025/12/04/1764833143.png"&gt;&lt;figcaption&gt;多吉-国内测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="doge2"
+ src="https://as.gmero.com/pic/2025/12/04/1764833164.png"&gt;&lt;figcaption&gt;CF-国外测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EO Pages，国内平均 0.18，国外 0.49&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="eo1"
+ src="https://as.gmero.com/pic/2025/12/04/1764833298.png"&gt;&lt;figcaption&gt;EO-国内测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="eo2"
+ src="https://as.gmero.com/pic/2025/12/04/1764833297.png"&gt;&lt;figcaption&gt;EO-国外测速&lt;/figcaption&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;可以看到 EO 的国内访问速度可以说是非常好了，最后使用了 EO + CF 的方案&lt;/p&gt;</description></item></channel></rss>

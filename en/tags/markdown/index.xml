@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markdown on Gmero</title><link>https://www.gmero.com/en/tags/markdown/</link><description>Recent content in Markdown on Gmero</description><generator>Hugo</generator><language>en</language><copyright>© 2025 Gmero. All rights reserved.</copyright><lastBuildDate>Sun, 17 Nov 2024 10:00:00 +0800</lastBuildDate><atom:link href="https://www.gmero.com/en/tags/markdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown Syntax Guide</title><link>https://www.gmero.com/en/posts/markdown-guide/</link><pubDate>Sun, 17 Nov 2024 10:00:00 +0800</pubDate><guid>https://www.gmero.com/en/posts/markdown-guide/</guid><description>&lt;p&gt;This article introduces commonly used Markdown syntax.&lt;/p&gt;
+&lt;h2 id="headings"&gt;Headings&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;#&lt;/code&gt; to create headings, the number indicates the level.&lt;/p&gt;
+&lt;h2 id="text-styles"&gt;Text Styles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bold text&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Italic text&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Strikethrough&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="links-and-images"&gt;Links and Images&lt;/h2&gt;
+&lt;p&gt;&lt;a
+ href="https://example.com"
+ target="_blank"
+ &gt;This is a link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+ &lt;img
+ class="my-0 rounded-md"
+ loading="lazy"
+ decoding="async"
+ alt="This is an image"
+ width="1280"
+ height="853"
+ src="https://www.gmero.com/posts/markdown-guide/autumn-7493439_1280.jpg"&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h2 id="code"&gt;Code&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;const x = 1;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Hello, World!&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="lists"&gt;Lists&lt;/h2&gt;
+&lt;p&gt;Unordered list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Item 1&lt;/li&gt;
+&lt;li&gt;Item 2&lt;/li&gt;
+&lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ordered list:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;First step&lt;/li&gt;
+&lt;li&gt;Second step&lt;/li&gt;
+&lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="blockquote"&gt;Blockquote&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a quoted text.
+It can span multiple lines.&lt;/p&gt;</description></item></channel></rss>
